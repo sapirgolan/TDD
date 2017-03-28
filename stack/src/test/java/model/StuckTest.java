@@ -1,4 +1,4 @@
-package com.sap.labs.tdd.model;
+package model;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -17,13 +17,13 @@ public class StuckTest {
 
     @Test
     public void testStuckHasSizeZeroFirst() throws Exception {
-        assertThat(classUnderTest.size(), is(0));
+        assertThat(classUnderTest.size(), Matchers.is(0));
     }
 
     @Test
     public void testWhenAddingItemsSizeIncrease() throws Exception {
         classUnderTest.put(3);
-        assertThat(classUnderTest.size(), is(1));
+        assertThat(classUnderTest.size(), Matchers.is(1));
     }
 
     @Test
@@ -31,7 +31,7 @@ public class StuckTest {
         for (int i = 0; i < 5; i++) {
             classUnderTest.put(i);
         }
-        assertThat(classUnderTest.size(), is(5));
+        assertThat(classUnderTest.size(), Matchers.is(5));
     }
 
     @Test
@@ -39,13 +39,13 @@ public class StuckTest {
         classUnderTest.put(3);
         classUnderTest.put(5);
         classUnderTest.pop();
-        assertThat(classUnderTest.size(), is(1));
+        assertThat(classUnderTest.size(), Matchers.is(1));
     }
 
     @Test
     public void testWhenPopReturnValue() throws Exception {
         classUnderTest.put(5);
-        assertThat(classUnderTest.pop(), is(5));
+        assertThat(classUnderTest.pop(), Matchers.is(5));
     }
 
     @Test
@@ -53,8 +53,8 @@ public class StuckTest {
         classUnderTest.put(5);
         classUnderTest.put(4);
 
-        assertThat(classUnderTest.pop(), is(4));
-        assertThat(classUnderTest.pop(), is(5));
+        assertThat(classUnderTest.pop(), Matchers.is(4));
+        assertThat(classUnderTest.pop(), Matchers.is(5));
     }
 
     @Test (expected = OverFlowException.class)

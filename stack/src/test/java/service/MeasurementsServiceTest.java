@@ -1,4 +1,4 @@
-package com.sap.labs.tdd.service;
+package service;
 
 import com.sap.labs.tdd.model.IBlock;
 import org.hamcrest.MatcherAssert;
