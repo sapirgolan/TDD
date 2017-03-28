@@ -1,5 +1,8 @@
 package model;
 
+import com.sap.labs.tdd.model.OverFlowException;
+import com.sap.labs.tdd.model.Stuck;
+import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 
